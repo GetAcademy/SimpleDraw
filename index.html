@@ -9,17 +9,17 @@
             display: grid;
             grid-template-columns: repeat(4, 3vw);
         }
-
+        
         #palette>div {
             width: 3vw;
             height: 3vw;
         }
-
+        
         #canvas {
             display: grid;
             grid-template-columns: repeat(30, 3vw);
         }
-
+        
         #canvas>div {
             width: 3vw;
             height: 3vw;
@@ -29,6 +29,20 @@
 </head>
 
 <body>
+    <script>
+        var color;
+
+        function selectColor(selectedColorDiv) {
+            var displayColorDiv = document.getElementById('selectedColor');
+            color = selectedColorDiv.style.backgroundColor;
+            displayColorDiv.style.backgroundColor = color;
+        }
+
+        function draw(pixelDiv) {
+            pixelDiv.style.backgroundColor = color;
+        }
+    </script>
+
     <div id="page">
         <b>Velg en farge:</b>
         <div id="palette">
@@ -66,7 +80,7 @@
             <div onclick="draw(this)"></div>
             <div onclick="draw(this)"></div>
             <div onclick="draw(this)"></div>
-            
+
             <div onclick="draw(this)"></div>
             <div onclick="draw(this)"></div>
             <div onclick="draw(this)"></div>
